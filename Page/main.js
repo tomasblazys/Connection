@@ -38,8 +38,10 @@ async function loadIntoTable(url, table, target) {
   }
 };
 
+// var urlJason = path.join('/data.json')
 
-loadIntoTable("/data.json", document.querySelector("table"));
+loadIntoTable('/data.json', document.querySelector("table"));
+
 
 
 // $(".clickable").click(function(e){
