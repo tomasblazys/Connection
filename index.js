@@ -54,7 +54,7 @@ if (err) {
 
 });
 
-console.log(myObject);
+//console.log(myObject);
 
 //
 // var naujasJson = JSON.stringify(dataFull);
@@ -116,6 +116,5 @@ app.post("/form", function(req,res){           //pagauna post localcost/ dir
 
 
 
-app.listen(3000, function(){
-  console.log("servas paleistas: 3000");
+app.listen(process.env.PORT || 3000, function(){
 });
