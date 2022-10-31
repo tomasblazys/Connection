@@ -6,47 +6,26 @@ async function loadIntoTable(url, table, target) {
     headers,
     selected
   } = await response.json();
+  const count = headers.length;
+  const [selectedArray] = selected;
 
   //Clear the table
 
-  tableHead.innerHTML = "<tr></tr>";
+  tableHead.innerHTML = "";
   tableBody.innerHTML = "";
 
-  for (const headerText of headers) {
+  for (let i = 0; i < count; i++) {
+    const headerText = headers[i];
+    const cellText = selectedArray[i];
     const headerElement = document.createElement("th");
-
-    headerElement.textContent = headerText;
-    tableHead.querySelector("tr").appendChild(headerElement);
-  }
-
-  for (const row of selected) {
     const rowElement = document.createElement("tr");
-
-    for (const cellText of row) {
-      const cellElement = document.createElement("td");
-
-      cellElement.textContent = cellText;
-      rowElement.appendChild(cellElement);
-    }
-
-    var query = rowElement.firstChild.textContent;
+    const cellElement = document.createElement("td");
     tableBody.appendChild(rowElement);
-    rowElement.classList.add("clickable");
-    rowElement.setAttribute("onclick","window.location.assign('/details?ak=" + query +"');");
+    headerElement.textContent = headerText;
+    cellElement.textContent = cellText;
+    tableBody.lastChild.appendChild(headerElement);
+    tableBody.lastChild.appendChild(cellElement);
   }
 };
 
-
 loadIntoTable("/data.json", document.querySelector("table"));
-
-
-// $(".clickable").click(function(e){
-//          e.preventDefault();
-//          document.location = "http://www.google.com/";
-// });
-
-
-// $(".clickable").click(function() {
-//   window.open("www.google.lt");
-//
-// });

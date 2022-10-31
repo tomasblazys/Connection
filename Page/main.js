@@ -34,23 +34,9 @@ async function loadIntoTable(url, table, target) {
     var query = rowElement.firstChild.textContent;
     tableBody.appendChild(rowElement);
     rowElement.classList.add("clickable");
-    rowElement.setAttribute("onclick","window.location.assign('/details?ak=" + query +"');");
+    rowElement.setAttribute("onclick", "window.location.assign('/details?ak=" + query + "');");
   }
 };
 
-// var urlJason = path.join('/data.json')
 
 loadIntoTable('/data.json', document.querySelector("table"));
-
-
-
-// $(".clickable").click(function(e){
-//          e.preventDefault();
-//          document.location = "http://www.google.com/";
-// });
-
-
-// $(".clickable").click(function() {
-//   window.open("www.google.lt");
-//
-// });

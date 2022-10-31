@@ -23,21 +23,18 @@ input {
 }
 
 table {
+  table-layout: fixed;
   border-style: solid;
-  max-width: 700px;
+  max-width: 500px;
   margin: auto;
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
-
 .section-main {
-
   height: 100vh;
   padding: 5% 10%;
   text-align: center;
 }
-
-
 
 .clickable:hover {
   background-color: #4FA095;
@@ -45,8 +42,8 @@ table {
 
 .submitButton {
   display: block;
-  margin-left: auto!important;
-  margin-right: auto!important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .btn {
@@ -54,7 +51,6 @@ table {
   margin: 20px;
 }
 
-.nok {
-
-  color: red;
+.details-table {
+  max-width: 400px;
 }
